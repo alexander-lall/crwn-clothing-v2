@@ -6,7 +6,9 @@ import { CartContext } from '../../contexts/cart.context';
 
 import { 
     CheckoutContainer, 
-    CheckoutHeader 
+    CheckoutHeader,
+    HeaderBlock,
+    Total
 } from './checkout.styles'
 
 const Checkout = () => {
@@ -15,14 +17,14 @@ const Checkout = () => {
     return (
         <CheckoutContainer>
             <CheckoutHeader>
-                <div>Product</div>                
-                <div>Description</div>                
-                <div>Quantity</div>                
-                <div>Price</div>
-                <div>Remove</div>
+                <HeaderBlock>Product</HeaderBlock>                
+                <HeaderBlock>Description</HeaderBlock>                
+                <HeaderBlock>Quantity</HeaderBlock>                
+                <HeaderBlock>Price</HeaderBlock>
+                <HeaderBlock>Remove</HeaderBlock>
             </CheckoutHeader>
             {cartItems.map(item => <CheckoutItem key={item.id} cartItem={item}/>)}
-            <span>Total: ${cartTotal}</span>
+            <Total>Total: ${cartTotal}</Total>
         </CheckoutContainer>    
     )
 }
